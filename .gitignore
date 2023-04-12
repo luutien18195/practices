@@ -24,3 +24,10 @@ hs_err_pid*
 
 # From .idea
 .idea/
+
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+java/.DS_Store
