@@ -8,6 +8,10 @@ import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
 
 public class Algorithms {
+     private Algorithms(){}
+     private Searchable searchable;
+     private List<Sortable> sortableList;
+
      public static class AlBuilder {
         private Searchable search;
         private List<Sortable> sorts;
@@ -50,11 +54,6 @@ public class Algorithms {
          sortableList.forEach(s -> Console.printInfo(s.getClass().getName(), () -> s.sort(arr.clone())));
     }
 
-    @Override
-    public int hashCode() {
-        return super.hashCode();
-    }
-
     public void executeSortAndCompareWithTarget(Comparable[] arr, Class<?> target) {
         if (sortableList == null || sortableList.isEmpty()) {
             Console.println("Not found any sortable instance");
@@ -77,7 +76,8 @@ public class Algorithms {
         });
     }
 
-    private Algorithms(){}
-    private Searchable searchable;
-    private List<Sortable> sortableList;
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
 }
